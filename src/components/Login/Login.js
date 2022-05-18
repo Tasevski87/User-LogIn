@@ -11,30 +11,34 @@ const Login = (props) => {
   const [passwordIsValid, setPasswordIsValid] = useState();
   const [formIsValid, setFormIsValid] = useState(false);
 
-  useEffect (() =>{
+  useEffect(() => {
     console.log("Effect Running")
 
-    return() => {
+    return () => {
       console.log("Effect Clean Up")
     }
   }, []);
 
-  useEffect(() => {
-    const identifier = setTimeout(() => {
-      console.log("Checking form validity")
-      setFormIsValid(
-        enteredEmail.includes('@') && enteredPassword.trim().length > 6
-      );
-    }, 500);
+  // useEffect(() => {
+  //   const identifier = setTimeout(() => {
+  //     console.log("Checking form validity")
+  //     setFormIsValid(
+  //       enteredEmail.includes('@') && enteredPassword.trim().length > 6
+  //     );
+  //   }, 500);
 
-    return () => {
-      console.log("CleanUp")        //clean up function
-      clearTimeout(identifier)            
-    };                           
-  }, [enteredEmail, enteredPassword]);
+  //   return () => {
+  //     console.log("CleanUp")        //clean up function
+  //     clearTimeout(identifier)            
+  //   };                           
+  // },  [enteredEmail, enteredPassword]);
 
   const emailChangeHandler = (event) => {
     setEnteredEmail(event.target.value);
+
+    setFormIsValid(
+      event.target.value.includes("@") && enteredPassword.trim().length > 6
+    );
   };
 
   const passwordChangeHandler = (event) => {
@@ -92,5 +96,6 @@ const Login = (props) => {
     </Card>
   );
 };
+
 
 export default Login;
