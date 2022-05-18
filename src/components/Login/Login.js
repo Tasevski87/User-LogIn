@@ -31,7 +31,7 @@ const Login = (props) => {
   //     console.log("CleanUp")        //clean up function
   //     clearTimeout(identifier)            
   //   };                           
-  // }, [enteredEmail, enteredPassword]);
+  // },  [enteredEmail, enteredPassword]);
 
   const emailChangeHandler = (event) => {
     setEnteredEmail(event.target.value);
@@ -96,5 +96,6 @@ const Login = (props) => {
     </Card>
   );
 };
+
 
 export default Login;
