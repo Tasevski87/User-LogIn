@@ -22,7 +22,7 @@ const emailReducer = (state, action) => {
 
 const Login = (props) => {
   // const [enteredEmail, setEnteredEmail] = useState('');
-  // const [emailIsValid, setEmailIsValid] = useState();          alternative 
+  // const [emailIsValid, setEmailIsValid] = useState();           alternative 
   const [enteredPassword, setEnteredPassword] = useState('');
   const [passwordIsValid, setPasswordIsValid] = useState();
   const [formIsValid, setFormIsValid] = useState(false);
@@ -44,7 +44,7 @@ const Login = (props) => {
   //   const identifier = setTimeout(() => {
   //     console.log("Checking form validity")
   //     setFormIsValid(
-  //       enteredEmail.includes('@') && enteredPassword.trim().length > 6
+  //       enteredEmail.includes('@') && enteredPassword.trim().length > 6  alternative
   //     );
   //   }, 500);
 
